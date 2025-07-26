@@ -29,7 +29,7 @@
 	--dark-gray-blue: hsl(224, 30%, 27%);
 	--light-gray-blue: hsla(224, 30%, 27%, 0.5);
 
-	--font-size: 18px;
+	--font-size: 1rem;
 }
 
 *,
@@ -243,4 +243,23 @@ body {
 	.summary__tiles {
 		gap: 15px;
 	}
+}
+
+.author {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 20px 30px;
+	font-size: 1.1rem;
+	font-weight: 300;
+	color: var(--dark-gray-blue);
+}
+
+.author__name,
+.author__name:focus,
+.author__name:active,
+.author__name:visited {
+	text-decoration: none;
+	color: blue;
+	font-weight: 400;
 }
