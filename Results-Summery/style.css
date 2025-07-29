@@ -8,6 +8,9 @@
 }
 
 :root {
+	--scale: 1;
+	--font-size: 1rem;
+
 	--light-red: hsl(0, 100%, 67%);
 	--orangey-yellow: hsl(39, 100%, 56%);
 	--green-teal: hsl(166, 100%, 37%);
@@ -28,8 +31,6 @@
 	--light-lavender: hsl(241, 100%, 89%);
 	--dark-gray-blue: hsl(224, 30%, 27%);
 	--light-gray-blue: hsla(224, 30%, 27%, 0.5);
-
-	--font-size: 1rem;
 }
 
 *,
@@ -59,6 +60,8 @@ body {
 	background-color: var(--white);
 	border-radius: 30px;
 	overflow: hidden;
+	transform: scale(var(--scale));
+	transition: transform 0.3s ease-in-out;
 }
 
 .result {
@@ -206,6 +209,10 @@ body {
 	color: var(--cobalt-blue);
 }
 
+.app:hover {
+	transform: scale(calc(var(--scale) + 0.05));
+}
+
 /* ===== Responsive Layout ===== */
 @media (max-width: 768px) {
 	.app {
@@ -246,20 +253,23 @@ body {
 }
 
 .author {
+	font-family: inherit;
 	position: absolute;
 	bottom: 0;
 	right: 0;
 	padding: 20px 30px;
-	font-size: 1.1rem;
-	font-weight: 300;
-	color: var(--dark-gray-blue);
+	font-size: 13px;
+	font-weight: normal;
+	word-spacing: 1px;
+	color: hsl(0, 0%, 12%);
 }
 
 .author__name,
 .author__name:focus,
 .author__name:active,
 .author__name:visited {
+	font-family: inherit;
 	text-decoration: none;
-	color: blue;
-	font-weight: 400;
+	font-weight: bold;
+	color: hsl(216, 100%, 59%);
 }
