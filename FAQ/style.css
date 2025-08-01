@@ -4,10 +4,10 @@
 	--font-size: 15px;
 
 	--deep-blue: hsl(212, 80%, 20%);
-	--grayish-blue: hsla(212, 90%, 10%, 0.5);
-	--light-blue: hsl(0, 0%, 98%);
+	--grayish-blue: hsl(212, 10%, 50%);
+	--light-blue: hsl(212, 50%, 95%);
 
-	--light-gray: hsl(0, 0%, 95%);
+	--light-gray: hsl(212, 50%, 95%);
 
 	--white: hsl(255, 0%, 100%);
 }

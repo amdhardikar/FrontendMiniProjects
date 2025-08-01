@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
+
+:root {
+	--grayish-blue: hsl(225, 45%, 92%);
+	--grayish-shadow: hsl(225, 15%, 82%);
+
+	--light-blue: hsl(200, 100%, 95%);
+	--light-red: hsl(290, 100%, 95%);
+	--light-orange: hsl(40, 100%, 95%);
+	--light-green: hsl(120, 100%, 95%);
+
+	--white: hsl(0, 0%, 100%);
+	--ligh: hsl(0, 0%, 98%);
+	--dark: hsl(0, 0%, 15%);
+}
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+}
+
+body {
+	font-size: 0.82rem;
+	background-color: var(--grayish-blue);
+	color: var(--dark);
+	user-select: none;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+.events {
+	width: 750px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.events__heading {
+	font-family: "Fraunces", serif;
+	text-transform: capitalize;
+	margin-bottom: 20px;
+}
+
+.event__item {
+	background-color: var(--ligh);
+	border-radius: 10px;
+	margin-top: 15px;
+	padding: 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+	transition: all 0.3s ease-in-out;
+}
+
+.event__timestamp {
+	width: 100px;
+	height: 100px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.event__timestamp span {
+	display: block;
+}
+
+.event__date {
+	font-size: 0.8rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.event__time {
+	font-family: "Fraunces", serif;
+	font-weight: 600;
+	font-size: 1.7rem;
+}
+
+.event__info {
+	border-right: 2px dashed rgb(231, 231, 231);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 15px;
+	flex: 1 1 0;
+	height: 100px;
+	padding-right: 10px;
+}
+
+.event__title {
+	font-family: "Fraunces", serif;
+	font-weight: 700;
+	font-size: 1.3rem;
+}
+
+.event__description {
+	font-weight: 500;
+}
+
+.event__action {
+   cursor: pointer;
+	width: 130px;
+	background-color: transparent;
+	color: color;
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	padding: 10px 15px;
+	text-align: center;
+	transition: all 0.3s ease-in-out;
+}
+
+.event__item:hover {
+	background-color: var(--white);
+	box-shadow: 0 0 60px 2px var(--grayish-shadow);
+	transform: scale(1.02);
+}
+
+.event__item:hover > .event__action {
+	background-color: var(--dark);
+	color: var(--ligh);
+}
+
+.blue {
+	background-color: var(--light-blue);
+}
+.red {
+	background-color: var(--light-red);
+}
+.orange {
+	background-color: var(--light-orange);
+}
+.green {
+	background-color: var(--light-green);
+}
+
+.author {
+	font-family: inherit;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 20px 30px;
+	font-size: 13px;
+	font-weight: normal;
+	word-spacing: 1px;
+	color: hsl(0, 0%, 12%);
+}
+
+.author__name,
+.author__name:focus,
+.author__name:active,
+.author__name:visited {
+	font-family: inherit;
+	text-decoration: none;
+	font-weight: bold;
+	color: hsl(216, 100%, 59%);
+}
