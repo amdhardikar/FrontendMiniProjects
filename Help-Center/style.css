@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
+
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	user-select: none;
+	font-family: "Inter", sans-serif;
+	font-size: 15px;
+	width: 100%;
+	height: 100vh;
+	place-content: center;
+}
+
+.app {
+	width: 900px;
+	height: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.app__title {
+   font-family: "Fraunces";
+   font-weight: 600;
+   text-transform: capitalize;
+}
+
+.app__search {
+   outline: none;
+   width: 60%;
+   border: 2px solid #b6b6b6;
+   padding: 20px 30px;
+   border-radius: 100px;   
+   color:#b6b6b6;
+   font-family: "Inter", sans-serif;
+   font-size: inherit;
+   font-weight: 500;
+}
+
+.app__search::placeholder {
+   color: inherit;
+   font-family: inherit;
+   font-weight: inherit;
+   font-size: inherit;
+}
+
+.app__search:focus {
+   outline: none;
+   border: 2px solid #8b8b8b;
+}
+
+.app__category {
+	width: inherit;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, 1ft);
+}
+
+.app__items {
+   background-color: #fff;
+   height: 110px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: left;
+   transition: transform 0.2s ease-in-out;
+}
+
+.app__items:nth-child(n + 4) {
+	border-top: 1px solid #e6e6e6;
+}
+.app__items:not(:nth-child(3n + 1)) {
+	border-left: 1px solid #e6e6e6;
+}
+
+.app__items:hover {
+   z-index: 1;
+   transform: scale(1.02);
+   box-shadow: 0 0 40px 1px #c2c2c2;
+}
