@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+	--bg: hsl(225, 100%, 98%);
+	--white: hsl(0, 0%, 100%);
+	--white-opacity-50: hsla(0, 0%, 100%, 0.5);
+	--white-opacity-70: rgba(255, 255, 255, 0.7);
+	--primary-purple: hsl(263, 55%, 52%);
+	--primary-purple-50: hsla(263, 100%, 87%, 0.7);
+	--dark-grayish-blue: hsl(217, 19%, 35%);
+	--very-dark-grayish-blue: hsl(219, 29%, 14%);
+	--card-shadow: hsla(230, 3%, 42%, 0.4);
+
+	--base: 13px;
+	--name: 14px;
+	--quote: 20px;
+
+	--regular: 400;
+	--medium: 500;
+	--semibold: 600;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	font-size: var(--base);
+	user-select: none;
+	background-color: var(--bg);
+}
+
+.testimony {
+	width: 1080px;
+	margin: 0 auto;
+	display: grid;
+	gap: 25px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, auto);
+	grid-template-areas:
+		"card1 card1 card2 card5"
+		"card3 card4 card4 card5";
+}
+
+.testimony__card {
+	display: grid;
+	padding: 25px 30px;
+	border-radius: 10px;
+	box-shadow: 0 0 50px 1px var(--card-shadow);
+	transition: transform 0.3s ease-in-out;
+	grid-template-columns: 50px auto;
+	grid-template-rows: 16px 16px auto minmax(auto, 1fr);
+	grid-template-areas:
+		"img name"
+		"img status"
+		"quote quote"
+		"content content";
+}
+
+.testimony__card:hover {
+	transform: scale(1.02);
+}
+
+.testimony__image {
+	grid-area: img;
+	width: 35px;
+	aspect-ratio: 1;
+	border-radius: 100px;
+}
+
+.testimony__card:nth-of-type(1) .testimony__image,
+.testimony__card:nth-of-type(4) .testimony__image {
+	border: 2px solid var(--primary-purple-50);
+}
+
+.testimony__name {
+	grid-area: name;
+	font-weight: var(--medium);
+	font-size: var(--name);
+}
+
+.testimony__status {
+	grid-area: status;
+	font-weight: var(--regular);
+	font-size: var(--base);
+	opacity: 0.5;
+}
+
+.testimony__quote {
+	grid-area: quote;
+	margin-top: 20px;
+	font-weight: var(--semibold);
+	font-size: var(--quote);
+}
+
+.testimony__content {
+	grid-area: content;
+	margin-top: 20px;
+	font-size: var(--base);
+	font-weight: var(--regular);
+	line-height: 1.4;
+	opacity: 0.7;
+}
+
+.testimony__card:nth-child(1) {
+	grid-area: card1;
+	background-image: url(./asset/bg-pattern-quotation.svg);
+	background-repeat: no-repeat;
+	background-position: 80% 0%;
+	background-color: var(--primary-purple);
+	color: var(--white);
+}
+
+.testimony__card:nth-child(2) {
+	grid-area: card2;
+	background-color: var(--dark-grayish-blue);
+	color: var(--white);
+}
+
+.testimony__card:nth-child(3),
+.testimony__card:nth-child(5) {
+	background-color: var(--white);
+}
+
+.testimony__card:nth-child(3) {
+	grid-area: card3;
+}
+
+.testimony__card:nth-child(4) {
+	grid-area: card4;
+	background-color: var(--very-dark-grayish-blue);
+	color: var(--white);
+}
+
+.testimony__card:nth-child(5) {
+	grid-area: card5;
+}
